@@ -4,160 +4,243 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portofolio Isma Maulana Hidayat</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      box-sizing: border-box;
-    }
 
+  <!-- Metadata SEO -->
+  <meta name="description" content="Portofolio Isma Maulana Hidayat - Desainer dan Pengembang Web Pemula.">
+  <meta name="author" content="Isma Maulana Hidayat">
+  <meta property="og:title" content="Portofolio Isma Maulana Hidayat" />
+  <meta property="og:description" content="Desainer kreatif dan pengembang web pemula. Lihat karya dan kontak saya di sini!" />
+  <meta property="og:image" content="foto.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.png" type="image/png" />
+
+  <!-- Fonts & Animations -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #f9fafb;
-      color: #2d2d2d;
+      background-color: #121212;
+      color: #f5f5f5;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      background-color: #1e1e1e;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #00bcd4;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
     }
 
     header {
-      background: #4f46e5;
-      color: white;
-      padding: 40px 20px;
+      background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
       text-align: center;
+      padding: 3rem 1rem;
+      position: relative;
+      overflow: hidden;
     }
 
-    header img {
-      width: 120px;
-      height: 120px;
+    .profile-pic {
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #ffffff;
-      margin-bottom: 10px;
+      border: 4px solid #444;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05);
     }
 
     header h1 {
-      margin: 10px 0 5px;
-      font-size: 28px;
+      font-size: 2.5rem;
+      margin-top: 1rem;
     }
 
-    header p {
-      font-size: 16px;
-      opacity: 0.9;
+    header .typed-text {
+      font-size: 1.1rem;
+      color: #26c6da;
+      font-weight: 500;
     }
 
-    .container {
-      max-width: 800px;
-      margin: 30px auto;
-      background: #ffffff;
-      padding: 30px;
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      padding: 1.5rem;
+      background-color: #1e1e1e;
       border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    section:hover {
+      transform: translateY(-4px);
     }
 
     h2 {
-      font-size: 22px;
-      color: #111827;
-      margin-top: 30px;
-    }
-
-    p, ul {
-      line-height: 1.6;
+      color: #00bcd4;
+      border-left: 5px solid #00bcd4;
+      padding-left: 0.8rem;
     }
 
     ul {
-      padding-left: 20px;
+      padding-left: 1.2rem;
     }
 
-    li {
-      margin-bottom: 6px;
+    .social a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #00bcd4;
+      font-weight: bold;
+      transition: all 0.3s ease;
     }
 
-    .highlight {
-      background: #eef2ff;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      border-left: 5px solid #6366f1;
+    .social a:hover {
+      color: #fff;
+      text-shadow: 0 0 5px #00e5ff;
     }
 
-    .footer {
+    footer {
       text-align: center;
-      font-size: 14px;
       color: #777;
-      margin-top: 40px;
+      padding: 2rem 0;
+      border-top: 1px solid #333;
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 22px;
+      .profile-pic {
+        width: 100px;
+        height: 100px;
       }
 
-      .container {
-        margin: 20px;
-        padding: 20px;
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
       }
     }
   </style>
 </head>
 <body>
 
+  <nav>
+    <a href="#tentang">Tentang</a>
+    <a href="#cv">CV</a>
+    <a href="#portofolio">Portofolio</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
   <header>
-    <img src="foto-utama.jpg" alt="Foto Profil Isma" />
-    <h1>Isma Maulana Hidayat</h1>
-    <p>Portofolio Pribadi - Kreatif, Siap Bekerja, dan Profesional</p>
+    <img src="foto.jpg" alt="Foto Isma" class="profile-pic" data-aos="zoom-in" />
+    <h1 data-aos="fade-up">Isma Maulana Hidayat</h1>
+    <p class="typed-text" id="typed" data-aos="fade-up" data-aos-delay="300"></p>
   </header>
 
-  <div class="container">
-    <h2>👤 Tentang Saya</h2>
-    <ul>
-      <li><strong>Nama:</strong> Isma Maulana Hidayat</li>
-      <li><strong>Usia:</strong> 19 tahun</li>
-      <li><strong>Alamat:</strong> Kp. Pasirjengkol, Ds. Karangmulya, Kec. Telukjambe Barat, Karawang</li>
-      <li><strong>No. HP:</strong> 085283077383</li>
-      <li><strong>Email:</strong> <a href="mailto:ismawhy23@gmail.com">ismawhy23@gmail.com</a></li>
-    </ul>
+  <main>
+    <section id="tentang" data-aos="fade-right">
+      <h2>Tentang Saya</h2>
+      <p>Saya Isma, seorang pemuda 19 tahun yang antusias terhadap desain grafis, teknologi, dan pengembangan web. Saya berkomitmen untuk terus belajar dan berkarya.</p>
+    </section>
 
-    <h2>🎓 Pendidikan</h2>
-    <p><strong>SMA</strong> — Lulus tahun 2023</p>
+    <section id="cv" data-aos="fade-left">
+      <h2>Curriculum Vitae</h2>
+      <ul>
+        <li><strong>Nama:</strong> Isma Maulana Hidayat</li>
+        <li><strong>Usia:</strong> 19 tahun</li>
+        <li><strong>Pendidikan:</strong> SMK/SMA [Nama Sekolah]</li>
+        <li><strong>Keahlian:</strong> Canva, HTML, CSS, Photoshop</li>
+        <li><strong>Pengalaman:</strong> Desain poster, website HTML, dan media promosi sekolah</li>
+      </ul>
+    </section>
 
-    <h2>💼 Pengalaman Kerja</h2>
-    <div class="highlight">
-      <p><strong>CV Karunia Gemilang</strong><br>Posisi: Operator Produksi (2023–2024)</p>
-    </div>
-    <div class="highlight">
-      <p><strong>Ekspedisi Shopee</strong><br>Posisi: Operator Mesin (2024)</p>
-    </div>
+    <section id="portofolio" data-aos="fade-right">
+      <h2>Portofolio</h2>
+      <ul>
+        <li><strong>Desain CV:</strong> Menggunakan Canva & Photoshop</li>
+        <li><strong>Website HTML:</strong> <a href="https://isma184.github.io" target="_blank">Lihat Website</a></li>
+        <li><strong>Poster Promosi:</strong> Untuk kegiatan komunitas & sekolah</li>
+      </ul>
+    </section>
 
-    <h2>💡 Keahlian</h2>
-    <ul>
-      <li>Microsoft Word</li>
-      <li>Desain</li>
-      <li>Public Speaking</li>
-      <li>Kreatif & Idealis</li>
-    </ul>
+    <section id="kontak" data-aos="fade-up">
+      <h2>Kontak</h2>
+      <p>Hubungi saya melalui media sosial di bawah ini:</p>
+      <div class="social">
+        <a href="https://wa.me/628123456789" target="_blank">WhatsApp</a>
+        <a href="https://instagram.com/username" target="_blank">Instagram</a>
+        <a href="mailto:email@domain.com">Email</a>
+      </div>
+    </section>
+  </main>
 
-    <h2>🎯 Tujuan Karier</h2>
-    <ul>
-      <li>Administrasi</li>
-      <li>Operator Produksi</li>
-      <li>Customer Service</li>
-      <li>Cleaning Service</li>
-      <li>Driver</li>
-      <li>Sales</li>
-    </ul>
+  <footer>
+    &copy; 2025 Isma Maulana Hidayat. Dibuat dengan 💙 dan semangat belajar.
+  </footer>
 
-    <h2>🎨 Minat & Hobi</h2>
-    <ul>
-      <li>Olahraga</li>
-      <li>Otomotif</li>
-      <li>Teknologi</li>
-    </ul>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 800 });
+  </script>
 
-    <h2>🌐 Media Sosial</h2>
-    <p>Saya belum memiliki akun LinkedIn, namun akan segera membuatnya. Kunjungi <a href="https://linkedin.com" target="_blank">LinkedIn</a> untuk mencarinya nanti.</p>
+  <script>
+    const typedText = document.getElementById('typed');
+    const words = ['Desainer Kreatif', 'Pengembang Web Pemula', 'Siap Belajar dan Berkarya!'];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let typing = true;
 
-    <div class="footer">
-      &copy; 2025 Isma Maulana Hidayat • Terima kasih telah mengunjungi portofolio saya!
-    </div>
-  </div>
+    function typeText() {
+      if (typing) {
+        if (charIndex < words[wordIndex].length) {
+          typedText.textContent += words[wordIndex][charIndex];
+          charIndex++;
+          setTimeout(typeText, 100);
+        } else {
+          typing = false;
+          setTimeout(typeText, 2000);
+        }
+      } else {
+        if (charIndex > 0) {
+          typedText.textContent = words[wordIndex].slice(0, charIndex - 1);
+          charIndex--;
+          setTimeout(typeText, 50);
+        } else {
+          typing = true;
+          wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(typeText, 500);
+        }
+      }
+    }
 
+    typeText();
+  </script>
 </body>
 </html>
